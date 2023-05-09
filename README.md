@@ -1,11 +1,14 @@
 # blog
 my blog
-<div contenteditable=true>
-  <a id=lnk style=-moz-appearance:textfield href=http://www.google.com>http://www.google.com</a>
-</div>
+<fieldset id="LinkList">
+    <input type="text" id="addLinks" name="addLinks" value="http://">
+    <input type="button" id="linkadd" name="linkadd" value="add">
+</fieldset>
 <script>
-  var lnk=document.getElementById('lnk');
-lnk.addEventListener('click',()=>{
-	window.location.href = lnk.getAttribute('href');
+	$(document).ready(function(){
+    $('#TextBoxId').keypress(function(e){
+      if(e.keyCode==13)
+      $('#linkadd').click();
+    });
 });
-</script>
+	</script>
