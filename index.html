@@ -70,8 +70,7 @@ custom.
               {% if post.excerpt %} {{ post.excerpt }} {% else %} {{ post.content | truncatewords: 75 }} {% endif %}
             </div>
           </div>
-          {% endif %}
-          {% endfor %}
+         
         </div>
         <h3>
           <a href="{{ '/blog/' | relative_url }}">See more posts...</a>
