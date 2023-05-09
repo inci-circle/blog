@@ -6,7 +6,7 @@ my blog
 </fieldset>
 <script>
 	document.querySelector("#addLinks").addEventListener("keyup", event => {
-    if(event.key !== "Enter") return; // Use `.key` instead.
+    if(event.key === "Enter") return; // Use `.key` instead.
     document.querySelector("#linkadd").click(); // Things you want to do.
     event.preventDefault(); // No need to `return false;`.
 });
