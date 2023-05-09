@@ -65,17 +65,7 @@ custom.
             <div class="meta">
               <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
             </div>
-            {% endif %} {% if post.hero %}
-            <div class="postimage hero {{post.hero.classes}}">
-              <a href="{{ post.url | relative_url }}">
-                {% if post.hero.asset_path %}
-                  <img src="{{ post.hero.asset_path | relative_url }}" alt="{{post.hero.description}}" />
-                {% else %}
-                  <img src="{{ post.hero.url }}" alt="{{ post.hero.description }}" />
-                {% endif %}
-              </a>
-            </div>
-            {% endif %}
+            
             <div>
               {% if post.excerpt %} {{ post.excerpt }} {% else %} {{ post.content | truncatewords: 75 }} {% endif %}
             </div>
