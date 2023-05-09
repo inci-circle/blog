@@ -17,23 +17,24 @@ custom.
   <div class="personal-banner">
     <div class="wrap">
       <p class="icons">
-       
+        {% if site.github_username %}
         <a href="https://www.github.com/{{ site.github_username }}" analytics-on="click" analytics-event="outbound" analytics-label="github_profile">
           <span class="icon-github"></span>
         </a>
-       
+        {% endif %} {% if site.twitter_username %}
         <a href="https://www.twitter.com/{{ site.twitter_username }}" analytics-on="click" analytics-event="outbound" analytics-label="twitter_profile">
           <span class="icon-twitter"></span>
         </a>
-        
+        {% endif %} {% if site.linkedin_username %}
         <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" analytics-on="click" analytics-event="outbound" analytics-label="linkedin_profile">
           <span class="icon-linkedin"></span>
         </a>
-      
+        {% endif %}
       </p>
       <div class="brand">
         <div class="brand-img">
-         <div class="brand-name">
+          <img src="//www.gravatar.com/avatar/692c58f37a3704944bd31c4cbcb287e7.png?s=150" class="img-profile"></div>
+        <div class="brand-name">
           <h1>Nate McMaster</h1>
           <h3>Software dev &amp; infrequent blogger</h3>
         </div>
@@ -65,12 +66,23 @@ custom.
             <div class="meta">
               <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
             </div>
-            
+            {% endif %} {% if post.hero %}
+            <div class="postimage hero {{post.hero.classes}}">
+              <a href="{{ post.url | relative_url }}">
+                {% if post.hero.asset_path %}
+                  <img src="{{ post.hero.asset_path | relative_url }}" alt="{{post.hero.description}}" />
+                {% else %}
+                  <img src="{{ post.hero.url }}" alt="{{ post.hero.description }}" />
+                {% endif %}
+              </a>
+            </div>
+            {% endif %}
             <div>
               {% if post.excerpt %} {{ post.excerpt }} {% else %} {{ post.content | truncatewords: 75 }} {% endif %}
             </div>
           </div>
-         
+          {% endif %}
+          {% endfor %}
         </div>
         <h3>
           <a href="{{ '/blog/' | relative_url }}">See more posts...</a>
