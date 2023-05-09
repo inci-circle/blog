@@ -1,13 +1,25 @@
 # blog
 my blog
-<fieldset id="LinkList">
-    <input type="text" id="addLinks" name="addLinks" value="http://">
-    <input type="button" id="linkadd" name="linkadd" value="add">
-</fieldset>
-<script>
-	document.querySelector("#addLinks").addEventListener("keyup", event => {
-    if(event.key === "Enter") return; // Use `.key` instead.
-    document.querySelector("#linkadd").click(); // Things you want to do.
-    event.preventDefault(); // No need to `return false;`.
-});
-	</script>
+<form id='formName' name='formName' onsubmit='redirect();return false;'>
+                <input type='text' id='userInput' name='userInput' value=''>
+                <input type='submit' name='submit' value='Submit'>
+            </form>
+
+            <script type='text/javascript'>
+            function redirect() {
+                var input = document.getElementById('userInput').value;
+                switch(input) {
+                    case 'apple':
+                        window.location.replace('apple.html');
+                        break;
+                    case 'banana':
+                        window.location.replace('banana.html');
+                        break;
+                    default:
+                        window.location.replace('default.html');
+                        break;
+                }
+
+
+            }
+            </script>
