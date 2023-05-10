@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "$ctf@hi-all writeup"
+title: "$ctf@hi-all-writeup"
 date: 2023-05-10
 ---  
 
